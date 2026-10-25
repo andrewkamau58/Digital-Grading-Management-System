@@ -1,0 +1,316 @@
+/* DIGITAL GRADING MANAGEMENT SYSTEM
+   Modern shared dashboard theme */
+
+:root {
+  --navy: #14213d;
+  --navy-light: #1d3157;
+  --blue: #4169e1;
+  --teal: #0d9488;
+  --page: #f3f6fc;
+  --white: #ffffff;
+  --text: #202b40;
+  --muted: #78849a;
+  --border: #e5eaf3;
+  --shadow: 0 8px 28px rgba(26, 43, 78, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(ellipse at top right, #e1eaff 0, transparent 35%),
+    var(--page);
+  line-height: 1.6;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+.dashboard-card {
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 28px 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.dashboard-card a {
+  font-size: 17px;
+}
+a {
+  text-decoration: none;
+}
+
+/* Dashboard hero/header */
+body > header {
+  position: relative;
+  overflow: hidden;
+  padding: 42px max(28px, calc((100% - 1160px) / 2));
+  color: white;
+  background: linear-gradient(120deg, #111c35 0%, #1b3563 65%, #2453a6 100%);
+  border-bottom: 4px solid var(--teal);
+}
+
+body > header::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: 7%;
+  top: -180px;
+  border: 45px solid rgba(255, 255, 255, 0.055);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body > header p {
+  position: relative;
+  z-index: 1;
+  color: #d5e1f8;
+  margin: 0 0 8px;
+}
+
+body > header h1 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -1.2px;
+  margin: 0 0 12px;
+}
+
+body > header p strong {
+  color: white;
+}
+
+/* Main content */
+body > main {
+  width: min(1160px, calc(100% - 48px));
+  margin: 36px auto;
+}
+
+body > main h2 {
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+body > main h3 {
+  margin: 0 0 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Role badge */
+.badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 30px;
+  color: #176e65;
+  background: #dff7f2;
+  border: 1px solid #c4eee5;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Module navigation cards */
+body > main > nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 26px 0 30px;
+  padding: 0;
+  background: transparent;
+}
+
+body > main > nav p {
+  margin: 0;
+  min-width: 0;
+}
+
+body > main > nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 108px;
+  padding: 23px 42px 23px 62px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(26, 43, 78, 0.035);
+  font-weight: 700;
+  line-height: 1.4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body > main > nav a::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--blue), #8ba5ff);
+  box-shadow: 0 4px 10px rgba(65, 105, 225, 0.2);
+}
+
+body > main > nav a::after {
+  content: "↗";
+  position: absolute;
+  right: 17px;
+  top: 15px;
+  color: #9aa7bc;
+  font-size: 16px;
+}
+
+body > main > nav a:hover {
+  transform: translateY(-4px);
+  border-color: #b9caff;
+  box-shadow: var(--shadow);
+  color: #2449b8;
+}
+
+body > main > nav p:nth-child(3n + 2) a::before {
+  background: linear-gradient(135deg, #0d9488, #55cbb8);
+}
+
+body > main > nav p:nth-child(3n) a::before {
+  background: linear-gradient(135deg, #8258d7, #b29af5);
+}
+
+/* Account and security panel */
+body > main > section.card {
+  padding: 24px 27px;
+  margin-top: 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+body > main > section.card p {
+  margin-bottom: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 19px;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Shared styles for other system pages */
+main > section,
+.container,
+.content,
+.page-content {
+  min-width: 0;
+}
+
+.card,
+.panel,
+.stat-card,
+.dashboard-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: #52617a;
+  background: #f7f9fd;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  font: inherit;
+}
+
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  padding: 11px 12px;
+  border: 1px solid #d7dfec;
+  border-radius: 9px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #dbe5ff;
+  border-color: var(--blue);
+}
+
+/* Responsive tablet/mobile layout */
+@media (max-width: 900px) {
+  body > main > nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  body > header {
+    padding: 30px 22px;
+  }
+
+  body > main {
+    width: calc(100% - 30px);
+    margin: 25px auto;
+  }
+
+  body > main > nav {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body > main > nav a {
+    min-height: 78px;
+  }
+
+  body > main > section.card {
+    align-items: flex-start !important;
+    padding: 20px;
+  }
+}

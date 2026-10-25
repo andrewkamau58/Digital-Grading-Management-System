@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigitalGrading Management System</title>
-</head>
-<body>
-  <h1>Digital Grading Management System</h1>
 
-  <p>Kiambu Institute of Business Studies</p>
+<?php
+session_start();
 
-  <a href="auth/login.php">Login</a>
-  
-</body>
-</html>
+if (!isset($_SESSION['user_id'], $_SESSION['role'])) {
+    header('Location: auth/login.php');
+    exit;
+}
+
+switch ($_SESSION['role']) {
+    case 'admin':
+        header('Location: admin/dashboard.php');
+        break;
+
+    case 'lecturer':
+        header('Location: lecturer/dashboard.php');
+        break;
+
+    case 'student':
+        header('Location: student/dashboard.php');
+        break;
+
+    default:
+        session_unset();
+        session_destroy();
+        header('Location: auth/login.php');
+        break;
+}
+
+exit;
