@@ -11,7 +11,7 @@ requireRole('admin');
     <link rel="stylesheet" href="../assets/style.css">
     <title>Administrator Dashboard</title>
     <style>
-        .dashboard-grid {
+.dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
@@ -58,7 +58,7 @@ h1 + p {
     outline: 2px solid #2563eb;
     outline-offset: 3px;
 }
-    </style>
+</style>
 </head>
 <body>
     <h1 class="dashboard-title">Administrator Dashboard</h1>
@@ -82,7 +82,8 @@ h1 + p {
         <p class="dashboard-card"><a href="students/create_account.php">Create Student Login Account</a></p>
         <p class="dashboard-card"><a href="../account/change_password.php">Change Password</a></p>
         <p class="dashboard-card"><a href="reports/index.php">Reports and Analytics</a></p>
+        <p class="dashboard-card"><a href="../auth/logout.php">Log Out</a></p>
     </div>
-    <p class="dashboard-card"><a href="../auth/logout.php">Log Out</a></p>
+    
 </body>
 </html>
