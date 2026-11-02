@@ -11,6 +11,9 @@ requireRole('admin');
     <link rel="stylesheet" href="../assets/style.css">
     <title>Administrator Dashboard</title>
     <style>
+        body {
+            background-color:rgba(62, 79, 109, 0.64);
+        }
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

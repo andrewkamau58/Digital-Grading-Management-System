@@ -9,7 +9,10 @@ requireRole('lecturer');
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/style.css">
     <style>
-        .dashboard-grid {
+        body {
+            background-color:rgba(62, 79, 109, 0.64);
+        }
+.dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
@@ -21,7 +24,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Welcome message */
 h1 + p {
     color: #64748b;
     font-size: 16px;
@@ -36,7 +38,7 @@ h1 + p {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .dashboard-card a {
-  display: block;
+    display: block;
     text-decoration: none;
     color: #1d4ed8;
     font-size: 17px;
@@ -56,8 +58,8 @@ h1 + p {
     outline: 2px solid #2563eb;
     outline-offset: 3px;
 }
-    </style>
-    <title>Lecturer Dashboard</title>
+</style>
+<title>Lecturer Dashboard</title>
 </head>
 <body>
     <h1 class="dashboard-title">Lecturer Dashboard</h1>
